@@ -1,7 +1,7 @@
 #!/bin/bash 
 
 user=$(whoami)
-
+day=$(date +%F )
 if [ -d "/home/$user/Summries-Network-Traffic" ]
 then
 	cd ~/Summries-Network-Traffic
@@ -16,7 +16,7 @@ else
 
 fi
 
-vnstati -vs -o /home/$user/Summries-Network-Traffic/summery.png
+vnstati -vs -o /home/$user/Summries-Network-Traffic/Network-$day-Staticties.png
 
 result=$( echo "$?" )
 
@@ -33,14 +33,14 @@ then
 			echo "Install Start "  
 			sudo apt install vnstat
 			sudo apt install vnstati
-			vnstati -vs -o /home/$user/Summries-Network-Traffic/summery.png
+			vnstati -vs -o /home/$user/Summries-Network-Traffic/Network-$day-Staticties.png
 			echo "New Monitor Screen Applied " 
 
 		elif [[ "$distro" == "redhat" || "$distro" == "fedora" || "$distro" == "rokey" ]]
 		then 
 			echo "Install Start " 
 			sudo yum install vnstat
-			vnstati -vs -o /home/$user/Summries-Network-Traffic/summery.png
+			vnstati -vs -o /home/$user/Summries-Network-Traffic/Network-$day-Staticties.png
 			echo "New Monitor Screen Applied " 
 
 		fi
