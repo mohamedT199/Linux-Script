@@ -20,6 +20,8 @@ vnstati -vs -o /home/$user/Summries-Network-Traffic/Network-$day-Staticties.png
 
 result=$( echo "$?" )
 
+
+#show linux distribution like that 	(distribution name) so you need it just name of distribution so using cut and tr command to get result in form compare 
 distro=$( lsb_release -i | cut -d: -f2 | sed s/'^\t'// | tr [:upper:] [:lower:] )
 
 if [ "$result" -ne 0 ]
