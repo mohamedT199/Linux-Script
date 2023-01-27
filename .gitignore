@@ -1,1 +1,4 @@
-./*.swp
+*.swp
+.cache
+.credential
+.repositoryComponents
